@@ -1,0 +1,1 @@
+export default function About(){return <div className="container py-10"><h1 className="text-3xl font-bold">About River City Plumbing</h1><p>Family-owned plumbing company serving local homeowners and businesses.</p></div>}
