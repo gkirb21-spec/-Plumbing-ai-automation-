@@ -1,5 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body { @apply bg-slate-50 text-slate-900; }
-.container { @apply max-w-6xl mx-auto px-4; }
+
+:root {
+  --background: #f7f9fc;
+  --surface: #ffffff;
+  --foreground: #0f172a;
+  --muted-foreground: #475569;
+  --border: #dbe4f1;
+  --primary: #102a56;
+  --accent: #2d73d5;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight text-slate-900;
+  }
+
+  p {
+    @apply text-slate-600 leading-7;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-xl border border-[var(--border)] bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-shadow focus-visible:shadow-sm;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-slate-700;
+  }
+
+  .helper {
+    @apply mt-1 text-xs text-slate-500;
+  }
+}
