@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server";import { isAdmin } from "@/lib/auth";import { prisma } from "@/lib/prisma";
+export async function GET(){if(!isAdmin())return NextResponse.json({error:'Unauthorized'},{status:401});return NextResponse.json(await prisma.blogPost.findMany());}
+export async function POST(req:Request){if(!isAdmin())return NextResponse.json({error:'Unauthorized'},{status:401});const{action,data,id}=await req.json();if(action==='create')return NextResponse.json(await prisma.blogPost.create({data}));if(action==='update')return NextResponse.json(await prisma.blogPost.update({where:{id},data}));if(action==='delete')return NextResponse.json(await prisma.blogPost.delete({where:{id}}));return NextResponse.json({error:'Bad request'},{status:400});}

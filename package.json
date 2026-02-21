@@ -1,0 +1,42 @@
+{
+  "name": "river-city-plumbing",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "csv-stringify": "^6.5.2",
+    "libphonenumber-js": "^1.11.18",
+    "next": "14.2.15",
+    "next-auth": "^4.24.8",
+    "nodemailer": "^6.9.16",
+    "prisma": "^5.22.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "twilio": "^5.3.7",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.8.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "14.2.15",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}
